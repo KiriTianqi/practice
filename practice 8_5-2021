@@ -1,0 +1,64 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include <stdio.h>
+#include <string.h>
+//struct book 
+//{
+//	char name[20];
+//	int price;
+//};
+#define max 10// not used yet
+#define add(a,b)(a+b)
+int ADD(int a, int b)
+{
+	int final = a + b;
+	return final;
+}
+struct human
+{
+	char name[20];
+	int age;
+	char gender[20];
+};
+int main()
+{
+	int x = 2;
+	int y = 3;
+	int sum=0;
+	sum = add(x, y);
+	printf("the consequence equals to  %d  by using hong\n\n", sum);
+	ADD(x,y),
+	printf("the consequence equals to  %d  by using fx\n\n", sum);
+	struct human ch = { "joey",35,"male" };
+	printf("%s\n", ch.name);
+	printf("%d\n", ch.age);
+	printf("%s\n\n", ch.gender);
+	struct human* p = &ch;
+	printf("%s\n", (*p).name);
+	printf("%d\n", (*p).age);
+	printf("%s\n\n", (*p).gender);
+	ch.age = 98;
+	strcpy(ch.name, "rechall");
+	strcpy(ch.gender, "female");
+	printf("%s\n", ch.name);
+	printf("%d\n", ch.age);
+	printf("%s\n\n", ch.gender);
+	strcpy((*p).name, "ross");
+	strcpy(ch.gender, "secret");
+	p->age = 22;
+	printf("%s\n", p->name);
+	printf("%d\n", p->age);
+	printf("%s\n", p->gender);
+
+	//char a [] = { "abcd" };
+	//printf("%s\n", a);
+	/*struct book exm = { "a book named CS",102 };
+	struct book* p = &exm;
+	printf("%s\n", exm.name);
+	printf("%d\n", exm.price);
+	exm.price = 15;
+	printf("after = %s\n", (*p).name); 
+	printf("after = %d\n", (*p).price);
+	printf("after = %s\n", p->name);
+	printf("after = %d\n", p->price);*/
+	return 0;
+}
